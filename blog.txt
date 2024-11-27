@@ -1,0 +1,16 @@
+Tengo que crear un proyecto, tiene que ser un blog con ciertas funcionalidades:
+
+-crear post.
+-Ver post.
+-Actualizar post.
+-Borrar post.
+
+Funcionalidades técnicas:
+
+"1. Node.js & Express.js: The application will be a web server built using Node.js and Express.js. Express.js will handle routing and middleware.
+
+2. EJS: EJS will be used as the templating engine to generate dynamic HTML based on the application's state."
+Fragmento ecxtraído del documento de udemy.
+
+Ideas: Me gustaría que mi blog ocupara solo una página donde en la parte superior se pudiera crear un post. Debajo de esta sección tendremos una especie de caja que contiene los vlog publicados y desde ahí permitirnos eliminarlos o actualizarlos.
+

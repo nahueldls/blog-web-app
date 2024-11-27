@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>blog</title>
+</head>
+<body>
+    <h1>Tell us something about you</h1>
+
+    <form action="./submit" method="post">
+        <textarea name="post" rows="10" cols="40"></textarea>
+        <input type="submit">
+    </form>
+    <hr>
+    <h2>Your post are here</h2>
+        <%if (locals.posts) {%>
+            <%for (let i = 0; i < locals.posts.length; i++) {%>
+                <p><%= locals.posts[i]%></p>
+            <%}%>
+        <%} else {%>
+            <p>Agrega contenido a tu inicio!!</p>
+        <%}%>
+</body>
+</html>
