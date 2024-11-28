@@ -15,7 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get('/', (req,res) => {
-    res.render("index.ejs");
+    // console.log(arrpost);
+    if (arrpost.length==0) {
+        res.render("index.ejs");
+    } else {
+        res.render("index.ejs", { posts: arrpost });
+    }
 });
 
 
@@ -23,16 +28,15 @@ app.get('/post', (req, res) => {
     res.render("partials/post.ejs");
 });
 
-app.post('/submit', (req, res) => {
+app.post('/', (req, res) => {
     let data = req.body["post"];
     arrpost.push(data);
     res.locals = {posts:arrpost};
     console.log(res.locals.posts);
-    console.log("se realizó una solicitud post")
-    res.render("index.ejs");
+    console.log("se realizó una solicitud post");
+    res.redirect("/");
 });
 
-//problema: cuando actualizo la pagina web se realiza nuevamente la ultima solicitud post que antes ya se habia realizado, lo que genera que el ultimo post creado por el usuario se repita.
 
 app.listen(port, ()=> {
     console.log(`Listening on port ${port}`);

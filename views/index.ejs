@@ -1,12 +1,13 @@
 <%- include('partials/header') %>
-    
     <hr>
-    <h2>Your post are here</h2>
-        <%if (locals.posts) {%>
-            <%for (let i = 0; i < locals.posts.length; i++) {%>
-                <p><%= locals.posts[i]%></p>
+    <div class="container">
+        <h2>Your post are here</h2>
+            <%if (locals.posts) {%>
+                <%for (let i = 0; i < locals.posts.length; i++) {%>
+                    <p><%= locals.posts[i]%></p>
+                <%}%>
+            <%} else {%>
+                <p>Agrega contenido a tu inicio!!</p>
             <%}%>
-        <%} else {%>
-            <p>Agrega contenido a tu inicio!!</p>
-        <%}%>
+    </div>
 <%- include('partials/bottom.ejs') %>
